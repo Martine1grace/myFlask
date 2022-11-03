@@ -21,7 +21,12 @@ def datepage():
 @app.route('/birthdaytime',methods=['GET','POST'])
 def calc_brithdaytime():
     if request.method == 'POST':
-        return f"from   your submission  age is {2022 - int(request.form.get('birthdaytime'))}"
+          return f"""
+        <form ation='/birthdaytime' method='POST'>
+            <input type="number"  name="birthdaytime" placeholder="Birthyear eg 2020">
+            <button type="submit">submit</button>
+        </form>
+        From  your submission  age is  {2022 - int(request.form.get('birthdaytime'))}"""
     elif request.method == 'GET':
         return"""
         <form method='POST' action='/birthdaytime'>
